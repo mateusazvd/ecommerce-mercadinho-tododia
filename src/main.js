@@ -364,6 +364,7 @@ class Carrinho
 let estoque = popularEstoque(metaData[0].todos);
 const productsList = document.querySelector(".products-list");
 let view = "";
+let state_filter = 'all'
 const exibidos = []
 
 function abrirModal(){
@@ -382,7 +383,7 @@ function renderizarCarrinho(arr){
             <img src=${produto.url} alt="">
             <div>
               <div class="cart-item-nome">${produto.nome}</div>
-              <div class="cart-item-preco">R$ ${produto.preco * produto.quantidade}</div>
+              <div class="cart-item-preco">R$ ${(produto.preco * produto.quantidade).toFixed(2)}</div>
               <div class=cart-item-qtd-area>
                 <button onclick='adiciona(${produto.id})' class="aumentar">+</button>
                 <span>${produto.quantidade}</span>
@@ -404,7 +405,7 @@ function adiciona(id){
         carrinho.adicionarAoCarrinho(total[i])
         // console.log(carrinho.produtos);
         carrinho.atualizarqtd()
-        document.querySelector(`#${total[i].categoria}`).click()
+        document.querySelector(`#${state_filter}`).click()
       }
     }
      renderizarCarrinho(carrinho.produtos)
@@ -418,7 +419,7 @@ function diminuir(id){
       // console.log(total[i]);
       carrinho.removerDoCarrinho(total[i].id)
       carrinho.atualizarqtd()
-      document.querySelector(`#${total[i].categoria}`).click()
+      document.querySelector(`#${state_filter}`).click()
     }
   }
   renderizarCarrinho(carrinho.produtos) 
@@ -442,6 +443,7 @@ function filtrar(id)
     let e = new Estoque();
     e.exibirProdutos(id, estoque);
     renderizar(e.produtosAExibir);
+    state_filter = id
 
     productsList.innerHTML = view;
 
