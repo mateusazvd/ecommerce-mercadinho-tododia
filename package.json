@@ -1,0 +1,12 @@
+{
+  "name": "landing-page-mercado",
+  "version": "1.0.0",
+  "description": "\"Exercicio de Landing Page UpCode\"\"",
+  "main": "./src/main.js",
+  "type": "module",
+  "scripts": {
+    "test": "\"mercadinho\"\""
+  },
+  "author": "Mateus e Lucas",
+  "license": "MIT"
+}

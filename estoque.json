@@ -1,0 +1,161 @@
+{
+  "todos":[
+    {
+      "categoria":"alimento",
+      "nome":"Macarrão Parafuso  DONA BENTA 500g",
+      "preco":2.66,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1546546418/1xg.jpg?imwidth=292"
+    },{
+      "categoria":"alimento",
+      "nome":"Açúcar Refinado ALTO ALEGRE 1kg",
+      "preco":3.60,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1542978687/1xg.jpg?imwidth=292"
+    },{
+      "categoria":"alimento",
+      "nome":"Feijão Carioca Tipo 1 NAMORADO 1kg",
+      "preco":8.80,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1547800339/1xg.jpg?imwidth=292"
+    },{
+      "categoria":"alimento",
+      "nome":"Óleo de Soja Liza 900ml",
+      "preco":12.30,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1514291153/1xg.jpg?imwidth=292"
+    },
+    {
+      "categoria":"alimento",
+      "nome":"Salgadinho doritos queijo 140g",
+      "preco":11.80,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1510183848/1xg.jpg?imwidth=256"
+    },{
+      "categoria":"alimento",
+      "nome":"Biscoito passatempo",
+      "preco":3.00,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1542765632/1xg.jpg?imwidth=256"
+    },{
+      "categoria":"alimento",
+      "nome":"Leite de Coco Imperial 200Ml",
+      "preco":3.60,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1541322744/1xg.jpg?imwidth=256"
+    },{
+      "categoria":"alimento",
+      "nome":"Creme de Leite UHT Piracanjuba - 200 g",
+      "preco":3.20,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/55048352/1xg.jpg?imwidth=256"
+    }
+    ,{
+      "categoria":"alimento",
+      "nome":"Molho de Tomate Salsaretti 300Gr",
+      "preco":1.68,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1541037035/1xg.jpg?imwidth=256"
+    },{
+      "categoria":"alimento",
+      "nome":"Biscoito Cream Cracke",
+      "preco":2.66,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1542984336/1xg.jpg?imwidth=256"
+    },{
+      "categoria":"bebida",
+      "nome":"Refrigerante coca cola",
+      "preco":8.50,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1505930927/1xg.jpg"
+    },{
+      "categoria":"bebida",
+      "nome":"Refrigerante guaraná 200ml",
+      "preco":1.30,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1516997523/1xg.jpg?imwidth=292"
+    },{
+      "categoria":"bebida",
+      "nome":"Refrigerante sukita 2L",
+      "preco":1.30,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1509525988/1xg.jpg?imwidth=292"
+    },{
+      "categoria":"bebida",
+      "nome":"cerveja heineken 12 unidades",
+      "preco":56.00,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/55021179/1g.jpg"
+    },{
+      "categoria":"bebida",
+      "nome":"cerveja Einsenbahn pilsen",
+      "preco":6.00,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1511106407/1xg.jpg?imwidth=292"
+    },{
+      "categoria":"bebida",
+      "nome":"cerveja Einsenbahn pilsen",
+      "preco":6.00,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1511106407/1xg.jpg?imwidth=292"
+    },{
+      "categoria":"bebida",
+      "nome":"cerveja brahma duplo malte",
+      "preco":38.00,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/55040140/1xg.jpg"
+    },{
+      "categoria":"bebida",
+      "nome":"cerveja brahma duplo malte",
+      "preco":38.00,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/55042576/1g.jpg"
+    },{
+      "categoria":"bebida",
+      "nome":"Agua mineral natural",
+      "preco":2.00,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/8930757/1xg.jpg?imwidth=292"
+    }
+    ,{
+      "categoria":"bebida",
+      "nome":"suco de laranja natural",
+      "preco":2.00,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/55040922/1xg.jpg"
+    },{
+      "categoria":"bebida",
+      "nome":"suco de uva natural",
+      "preco":6.80,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1515118241/1xg.jpg?imwidth=292"
+    },{
+      "categoria":"limpeza",
+      "nome":"sabão liquido ariel",
+      "preco":6.80,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/12550008/1xg.jpg"
+    },{
+      "categoria":"limpeza",
+      "nome":"Papel higienico neve",
+      "preco":36.00,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/15059290/1g.jpg?imwidth=256"
+    },{
+      "categoria":"limpeza",
+      "nome":"shampoo anti-caspa do cr7",
+      "preco":21.00,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/55049080/1g.jpg"
+    },{
+      "categoria":"limpeza",
+      "nome":"shampoo pantene",
+      "preco":21.00,
+      "quantidade": 0,
+      "url":"https://imgs.extra.com.br/1509514328/1xg.jpg"
+    }
+
+
+
+  ]
+}

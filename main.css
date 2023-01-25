@@ -1,0 +1,112 @@
+*{
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+body{
+  margin: 0px;
+  scrollbar-width: none;
+  
+}
+
+.header{
+  padding: 10px;
+  -webkit-box-shadow: -4px 6px 5px 0px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: -4px 6px 5px 0px rgba(0, 0, 0, 0.171);
+  box-shadow: -4px 6px 5px 0px rgba(0, 0, 0, 0.26);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart{
+  width: 30px;
+  height: 30px;
+  font-weight: 600;
+  color: rgb(124, 124, 124);
+}
+.cart:hover{
+  color: black;
+  cursor: pointer;
+}
+.qtd-cart{
+  background-color: orangered;
+  border-radius: 500px;
+  width: 5px;
+  height: 5px;
+  padding: 5px;
+  color: white;
+  font-size: 10px;
+}
+.enunciado{
+  margin-top: 50px;
+  padding-left: 10px;
+  padding-bottom: 0px;
+  margin-left: 50px;
+  border-left: 3px solid green;
+  font-size: 18px;
+  color: rgb(61, 60, 60);
+}
+.products-list{
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  height: auto;
+  
+}
+.product{
+  margin: 15px;
+  height: 230px;
+  width: 150px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid rgb(199, 199, 199);
+  text-align: center;
+
+}
+.product p{
+  margin-top: 10px;
+  font-size: 16px;
+  color: rgb(80, 79, 79);
+}
+.product div{
+  margin-top: 5px;
+  color: rgb(48, 48, 48);
+  font-weight: 600;
+}
+
+.quantidade button{
+  border: none;
+}
+.quantidade span{
+  font-weight: 400;
+}
+
+.sub-menu{
+  display: flex;
+}
+
+.sub-menu div{
+  margin-left: 10px;
+  cursor: pointer;
+  color: rgb(112, 112, 112);
+}
+
+.sub-menu div:hover{
+  color: black;
+}
+
+
+footer{
+  height: 100px;
+  background-color: rgb(32, 82, 32);
+}
+
+.contatos{
+  margin-left: 50px;
+  padding: 20px;
+  padding-top: 50px;
+  color: white;
+  font-size: 18px;
+  width: 300px;
+  font-weight: 500;
+}
