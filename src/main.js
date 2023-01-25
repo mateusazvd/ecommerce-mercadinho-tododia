@@ -34,12 +34,11 @@ class Produto
 
     aumentarQuantidade()
     {
-        this.quantidade++;
-        // console.log(this.quantidade);
+      this.quantidade++;
     }
     diminuirQuantidade()
     {
-        this.quantidade--;
+      this.quantidade > 0? this.quantidade--: this.quantidade = 0;
     }
 }
 class Estoque
@@ -63,7 +62,7 @@ class Estoque
         {
             if(flag == "all")
                 {
-                    this.produtosAExibir.push(estoque[j])
+                  this.produtosAExibir.push(estoque[j])
                 }
         }
         
@@ -316,7 +315,6 @@ class Carrinho
 
     adicionarAoCarrinho(produto)
     {   
-        console.log(produto.id);
         if(!this.set.includes(produto.id)){
           this.set.push(produto.id); 
         }
@@ -326,7 +324,6 @@ class Carrinho
 
     removerDoCarrinho(id)
     {
-
       for(let k = 0; k < this.produtos.length; k++)
         {
                 if(this.produtos[k].id === id)
