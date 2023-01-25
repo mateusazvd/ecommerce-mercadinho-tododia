@@ -136,7 +136,7 @@ let metaData = [
             url: "https://imgs.extra.com.br/55048352/1xg.jpg?imwidth=256"
           },
           {
-            id: 8,
+            id: 9,
             categoria: "alimento",
             nome: "Molho de Tomate Salsaretti 300Gr",
             preco: 1.68,
@@ -144,7 +144,7 @@ let metaData = [
             url: "https://imgs.extra.com.br/1541037035/1xg.jpg?imwidth=256"
           },
           {
-            id: 9,
+            id: 10,
             categoria: "alimento",
             nome: "Biscoito Cream Cracke",
             preco: 2.66,
@@ -152,7 +152,7 @@ let metaData = [
             url: "https://imgs.extra.com.br/1542984336/1xg.jpg?imwidth=256"
           },
           {
-            id: 10,
+            id: 11,
             categoria: "bebida",
             nome: "Refrigerante coca cola",
             preco: 8.5,
@@ -160,7 +160,7 @@ let metaData = [
             url: "https://imgs.extra.com.br/1505930927/1xg.jpg"
           },
           {
-            id: 11,
+            id: 12,
             categoria: "bebida",
             nome: "Refrigerante guaraná 200ml",
             preco: 1.3,
@@ -168,7 +168,7 @@ let metaData = [
             url: "https://imgs.extra.com.br/1516997523/1xg.jpg?imwidth=292"
           },
           {
-            id: 12,
+            id: 13,
             categoria: "bebida",
             nome: "Refrigerante sukita 2L",
             preco: 1.3,
@@ -176,20 +176,12 @@ let metaData = [
             url: "https://imgs.extra.com.br/1509525988/1xg.jpg?imwidth=292"
           },
           {
-            id: 13,
+            id: 14,
             categoria: "bebida",
             nome: "cerveja heineken 12 unidades",
             preco: 56,
             quantidade: 0,
             url: "https://imgs.extra.com.br/55021179/1g.jpg"
-          },
-          {
-            id: 14,
-            categoria: "bebida",
-            nome: "cerveja Einsenbahn pilsen",
-            preco: 6,
-            quantidade: 0,
-            url: "https://imgs.extra.com.br/1511106407/1xg.jpg?imwidth=292"
           },
           {
             id: 15,
@@ -202,10 +194,10 @@ let metaData = [
           {
             id: 16,
             categoria: "bebida",
-            nome: "cerveja brahma duplo malte",
-            preco: 38,
+            nome: "cerveja Einsenbahn pilsen",
+            preco: 6,
             quantidade: 0,
-            url: "https://imgs.extra.com.br/55040140/1xg.jpg"
+            url: "https://imgs.extra.com.br/1511106407/1xg.jpg?imwidth=292"
           },
           {
             id: 17,
@@ -213,10 +205,18 @@ let metaData = [
             nome: "cerveja brahma duplo malte",
             preco: 38,
             quantidade: 0,
-            url: "https://imgs.extra.com.br/55042576/1g.jpg"
+            url: "https://imgs.extra.com.br/55040140/1xg.jpg"
           },
           {
             id: 18,
+            categoria: "bebida",
+            nome: "cerveja brahma duplo malte",
+            preco: 38,
+            quantidade: 0,
+            url: "https://imgs.extra.com.br/55042576/1g.jpg"
+          },
+          {
+            id: 19,
             categoria: "bebida",
             nome: "Agua mineral natural",
             preco: 2,
@@ -224,7 +224,7 @@ let metaData = [
             url: "https://imgs.extra.com.br/8930757/1xg.jpg?imwidth=292"
           },
           {
-            id: 19,
+            id: 20,
             categoria: "bebida",
             nome: "suco de laranja natural",
             preco: 2,
@@ -232,7 +232,7 @@ let metaData = [
             url: "https://imgs.extra.com.br/55040922/1xg.jpg"
           },
           {
-            id: 20,
+            id: 21,
             categoria: "bebida",
             nome: "suco de uva natural",
             preco: 6.8,
@@ -240,7 +240,7 @@ let metaData = [
             url: "https://imgs.extra.com.br/1515118241/1xg.jpg?imwidth=292"
           },
           {
-            id: 21,
+            id: 22,
             categoria: "limpeza",
             nome: "sabão liquido ariel",
             preco: 6.8,
@@ -248,7 +248,7 @@ let metaData = [
             url: "https://imgs.extra.com.br/12550008/1xg.jpg"
           },
           {
-            id: 22,
+            id: 23,
             categoria: "limpeza",
             nome: "Papel higienico neve",
             preco: 36,
@@ -256,7 +256,7 @@ let metaData = [
             url: "https://imgs.extra.com.br/15059290/1g.jpg?imwidth=256"
           },
           {
-            id: 23,
+            id: 24,
             categoria: "limpeza",
             nome: "shampoo anti-caspa do cr7",
             preco: 21,
@@ -264,7 +264,7 @@ let metaData = [
             url: "https://imgs.extra.com.br/55049080/1g.jpg"
           },
           {
-            id: 24,
+            id: 25,
             categoria: "limpeza",
             nome: "shampoo pantene",
             preco: 21,
@@ -296,6 +296,7 @@ class Carrinho
         this.id = id;
         this.produtos = [];
         this.set = []
+        this.coisasCompradas = []
     }
 
     checarCarrinho(arr)
@@ -330,7 +331,6 @@ class Carrinho
                 if(this.produtos[k].id === id)
                 {
                     this.produtos[k].diminuirQuantidade();
-                    console.log(this.produtos[k].quantidade);
                     if(this.produtos[k].quantidade == 0)
                     {
                       this.produtos = this.produtos.filter(produto => produto.id !== id);
@@ -343,9 +343,9 @@ class Carrinho
     calcularPrecoDaCompra()
     {
         let total = 0;
-        for(let k = 0; k < this.produtos.length; k++)
+        for(let k = 0; k < this.coisasCompradas.length; k++)
         {
-            total += this.produtos[k].preco * this.produtos[k].quantidade;
+            total += this.coisasCompradas[k].preco * this.coisasCompradas[k].quantidade;
         }
 
         console.log(`O total da compra é de R$ ${total}`)
@@ -357,7 +357,7 @@ class Carrinho
       document.querySelector('#qtd-cart').classList.add('qtd-cart')
     }
 }
-
+let coisasCompradas = []
 let estoque = popularEstoque(metaData[0].todos);
 const productsList = document.querySelector(".products-list");
 let view = "";
@@ -386,7 +386,8 @@ function renderizarCarrinho(arr){
               </div>
             </div>
           </div>
-  `)
+  `
+  )
   document.querySelector('.card-item-list-area').innerHTML = carrinhoView
   // console.log(carrinho.produtos);
 }
@@ -403,7 +404,10 @@ function adiciona(id){
         document.querySelector(`#${state_filter}`).click()
       }
     }
-     renderizarCarrinho(carrinho.produtos)
+    console.log("aqui",carrinho.produtos);
+    renderizarCarrinho(carrinho.produtos)
+    carrinho.calcularPrecoDaCompra()
+     
     
 }
 function diminuir(id){
@@ -418,6 +422,8 @@ function diminuir(id){
     }
   }
   renderizarCarrinho(carrinho.produtos) 
+  carrinho.calcularPrecoDaCompra()
+
 }
 
 
@@ -445,18 +451,7 @@ function filtrar(id)
 }
 
 
-
-// renderizar(e.produtosAExibir)
-// productsList.innerHTML = view;
-
 const cart = new Carrinho(1);
-
-// cart.adicionarAoCarrinho(estoque[0]);
-// cart.adicionarAoCarrinho(estoque[1]);
-
-// estoque[1].aumentarQuantidade();
-
-// console.log(e);
 
 const f = new Estoque()
 f.exibirProdutos("all", estoque);
@@ -474,12 +469,8 @@ function leituraActionsBtn(){
     })
 }
 }
-leituraActionsBtn(); 
 
-// function test(value)
-// {
-//     console.log(value);
-// }
+leituraActionsBtn(); 
 
 function renderizar(arr){
     for(let i = 0; i < arr.length; i++)
