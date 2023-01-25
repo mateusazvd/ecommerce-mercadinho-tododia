@@ -35,19 +35,12 @@ class Produto
     aumentarQuantidade()
     {
         this.quantidade++;
-        console.log(this.quantidade);
+        // console.log(this.quantidade);
     }
     diminuirQuantidade()
     {
         this.quantidade--;
-        console.log(this);
     }
-
-    getTemplate()
-    {
-        console.log("oi");
-    }
-
 }
 class Estoque
 {
@@ -303,27 +296,50 @@ class Carrinho
     {
         this.id = id;
         this.produtos = [];
+        this.set = []
+    }
+
+    checarCarrinho(arr)
+    {
+        let total = estoque
+        for(let i = 0; i < arr.length; i++)
+        {
+          for(let j = 0; j < total.length; j++){
+            if(total[j].id == arr[i]){
+                this.produtos[i] = total[j];
+                
+            }
+          }
+        }
+
     }
 
     adicionarAoCarrinho(produto)
-    {
-        this.produtos.push(produto);
-    }
+    {   
+        console.log(produto.id);
+        if(!this.set.includes(produto.id)){
+          this.set.push(produto.id); 
+        }
+        this.checarCarrinho(this.set);
+      }
+
 
     removerDoCarrinho(id)
     {
+
       for(let k = 0; k < this.produtos.length; k++)
         {
                 if(this.produtos[k].id === id)
                 {
                     this.produtos[k].diminuirQuantidade();
-
-                    if(this.produtos[k].quantidade <= 0)
+                    console.log(this.produtos[k].quantidade);
+                    if(this.produtos[k].quantidade == 0)
                     {
-                        this.produtos = this.produtos.filter(produto => produto.id !== id);
+                      this.produtos = this.produtos.filter(produto => produto.id !== id);
                     }
                 }
         }
+      
     }
 
     calcularPrecoDaCompra()
@@ -338,14 +354,13 @@ class Carrinho
     }
     atualizarqtd()
     {
-      let tamanho = this.produtos.length
+      let tamanho = carrinho.produtos.length
       document.querySelector('#qtd-cart').innerHTML = tamanho
       document.querySelector('#qtd-cart').classList.add('qtd-cart')
-      
-      console.log(tamanho);
     }
 
 }
+
 let estoque = popularEstoque(metaData[0].todos);
 const productsList = document.querySelector(".products-list");
 let view = "";
@@ -377,16 +392,17 @@ function renderizarCarrinho(arr){
           </div>
   `)
   document.querySelector('.card-item-list-area').innerHTML = carrinhoView
+  console.log(carrinho.produtos);
 }
 
 function adiciona(id){
     let total = estoque
     for(let i = 0; i < total.length;i++){
       if(total[i].id == id){
-        total[i].quantidade++
-        console.log(total[i]);
+        total[i].aumentarQuantidade();
+        // console.log(total[i]);
         carrinho.adicionarAoCarrinho(total[i])
-        console.log(carrinho.produtos);
+        // console.log(carrinho.produtos);
         carrinho.atualizarqtd()
         document.querySelector(`#${total[i].categoria}`).click()
       }
@@ -398,14 +414,14 @@ function diminuir(id){
   let total = estoque
   for(let i = 0; i < total.length;i++){
     if(total[i].id == id){
-      total[i].quantidade--
-      console.log(total[i]);
-      carrinho.produtos = carrinho.removerDoCarrinho(total[i].id)
+      // total[i].quantidade--
+      // console.log(total[i]);
+      carrinho.removerDoCarrinho(total[i].id)
       carrinho.atualizarqtd()
       document.querySelector(`#${total[i].categoria}`).click()
     }
   }
-  renderizarCarrinho(carrinho.produtos)  
+  renderizarCarrinho(carrinho.produtos) 
 }
 
 
