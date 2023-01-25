@@ -1,7 +1,4 @@
 
-
-
-// aqui minha modificação  --- MATEUS AZEVEDO
 class Produto
 {
     constructor(id, categoria, nome, preco, quantidade, url)
