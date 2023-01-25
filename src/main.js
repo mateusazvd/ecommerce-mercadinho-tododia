@@ -45,7 +45,7 @@ class Estoque
 {
     constructor()
     {
-        this.produtosAExibir = [];
+      this.produtosAExibir = [];
     }
 
     exibirProdutos(flag,estoque)
@@ -301,6 +301,7 @@ class Carrinho
     checarCarrinho(arr)
     {
         let total = estoque
+        console.log("Aumento: ", this.produtos);
         for(let i = 0; i < arr.length; i++)
         {
           for(let j = 0; j < total.length; j++){
@@ -336,7 +337,7 @@ class Carrinho
                     }
                 }
         }
-      
+        console.log("Diminuição: ", this.produtos);
     }
 
     calcularPrecoDaCompra()
@@ -355,7 +356,6 @@ class Carrinho
       document.querySelector('#qtd-cart').innerHTML = tamanho
       document.querySelector('#qtd-cart').classList.add('qtd-cart')
     }
-
 }
 
 let estoque = popularEstoque(metaData[0].todos);
@@ -369,14 +369,12 @@ function abrirModal(){
   modal.classList.toggle("visible");
 }
 
-
-
 let carrinho = new Carrinho(1)
 
 function renderizarCarrinho(arr){
   let carrinhoView = ''
   arr.map(produto => carrinhoView = carrinhoView + `
-          <div class="cart-item" id = ${produto.id}>
+          <div class="cart-item" id = ${produto.id} style=${produto.quantidade <= 0? "background-color: red;":"background-color: blue"}>
             <img src=${produto.url} alt="">
             <div>
               <div class="cart-item-nome">${produto.nome}</div>
@@ -390,7 +388,7 @@ function renderizarCarrinho(arr){
           </div>
   `)
   document.querySelector('.card-item-list-area').innerHTML = carrinhoView
-  console.log(carrinho.produtos);
+  // console.log(carrinho.produtos);
 }
 
 function adiciona(id){
@@ -472,7 +470,7 @@ function leituraActionsBtn(){
     for(let btn of aumentar)
 {
     btn.addEventListener("click", (e) =>{
-        console.log(e.currentTarget);
+        // console.log(e.currentTarget);
     })
 }
 }
@@ -498,7 +496,6 @@ function renderizar(arr){
         </div>
     </div>
     `
-        
     }
 }
 
