@@ -347,7 +347,6 @@ class Carrinho
 
 }
 let estoque = popularEstoque(metaData[0].todos);
-
 const productsList = document.querySelector(".products-list");
 let view = "";
 const exibidos = []
@@ -361,6 +360,24 @@ function abrirModal(){
 
 let carrinho = new Carrinho(1)
 
+function renderizarCarrinho(arr){
+  let carrinhoView = ''
+  arr.map(produto => carrinhoView = carrinhoView + `
+          <div class="cart-item" id = ${produto.id}>
+            <img src=${produto.url} alt="">
+            <div>
+              <div class="cart-item-nome">${produto.nome}</div>
+              <div class="cart-item-preco">R$ ${produto.preco * produto.quantidade}</div>
+              <div class=cart-item-qtd-area>
+                <button onclick='adiciona(${produto.id})' class="aumentar">+</button>
+                <span>${produto.quantidade}</span>
+                <button onclick='diminuir(${produto.id})' class="aumentar">-</button>  
+              </div>
+            </div>
+          </div>
+  `)
+  document.querySelector('.card-item-list-area').innerHTML = carrinhoView
+}
 
 function adiciona(id){
     let total = estoque
@@ -374,6 +391,7 @@ function adiciona(id){
         document.querySelector(`#${total[i].categoria}`).click()
       }
     }
+     renderizarCarrinho(carrinho.produtos)
     
 }
 function diminuir(id){
@@ -387,7 +405,7 @@ function diminuir(id){
       document.querySelector(`#${total[i].categoria}`).click()
     }
   }
-  
+  renderizarCarrinho(carrinho.produtos)  
 }
 
 
