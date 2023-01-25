@@ -308,18 +308,18 @@ class Carrinho
 
     removerDoCarrinho(id)
     {
-        let novoCarrinho = [];
-        for(let i = 0; i < this.produtos.length; i++)
+      for(let k = 0; k < this.produtos.length; k++)
         {
-            if(this.produtos[i].id === id)
-            {
-                continue;
-            }
-            else{
-                novoCarrinho.push(this.produtos[i]);
-            }
+                if(this.produtos[k].id === id)
+                {
+                    this.produtos[k].diminuirQuantidade();
+
+                    if(this.produtos[k].quantidade <= 0)
+                    {
+                        this.produtos = this.produtos.filter(produto => produto.id !== id);
+                    }
+                }
         }
-       return this.produtos = novoCarrinho;
     }
 
     calcularPrecoDaCompra()
