@@ -1,4 +1,6 @@
-
+/**
+ * Teste de merge!
+ */
 class Produto
 {
     constructor(id, categoria, nome, preco, quantidade, url)
