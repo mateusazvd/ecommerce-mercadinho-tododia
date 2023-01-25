@@ -348,7 +348,7 @@ class Carrinho
             total += this.coisasCompradas[k].preco * this.coisasCompradas[k].quantidade;
         }
 
-        console.log(`O total da compra é de R$ ${total}`)
+        console.log(`O total da compra é de R$ ${total.toFixed(2)}`)
     }
     atualizarqtd()
     {
@@ -373,21 +373,27 @@ let carrinho = new Carrinho(1)
 
 function renderizarCarrinho(arr){
   let carrinhoView = ''
-  arr.map(produto => carrinhoView = carrinhoView + `
-          <div class="cart-item" id = ${produto.id} style=${produto.quantidade <= 0? "background-color: red;":"background-color: blue"}>
-            <img src=${produto.url} alt="">
-            <div>
-              <div class="cart-item-nome">${produto.nome}</div>
-              <div class="cart-item-preco">R$ ${(produto.preco * produto.quantidade).toFixed(2)}</div>
-              <div class=cart-item-qtd-area>
-                <button onclick='adiciona(${produto.id})' class="aumentar">+</button>
-                <span>${produto.quantidade}</span>
-                <button onclick='diminuir(${produto.id})' class="aumentar">-</button>  
+  carrinho.coisasCompradas = []
+  arr.map(produto => {
+
+      if(produto.quantidade != 0){
+        carrinho.coisasCompradas.push(produto)
+        carrinhoView = carrinhoView + `
+            <div class="cart-item" id = ${produto.id}>
+              <img src=${produto.url} alt="">
+              <div>
+                <div class="cart-item-nome">${produto.nome}</div>
+                <div class="cart-item-preco">R$ ${(produto.preco * produto.quantidade).toFixed(2)}</div>
+                <div class=cart-item-qtd-area>
+                  <button onclick='adiciona(${produto.id})' class="aumentar">+</button>
+                  <span>${produto.quantidade}</span>
+                  <button onclick='diminuir(${produto.id})' class="aumentar">-</button>  
+                </div>
               </div>
             </div>
-          </div>
-  `
-  )
+    `
+    }
+})
   document.querySelector('.card-item-list-area').innerHTML = carrinhoView
   // console.log(carrinho.produtos);
 }
