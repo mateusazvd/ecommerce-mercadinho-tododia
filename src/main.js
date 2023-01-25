@@ -1,6 +1,10 @@
 /**
  * Teste de merge!
  */
+
+
+
+
 class Produto
 {
     constructor(id, categoria, nome, preco, quantidade, url)
@@ -347,6 +351,11 @@ let estoque = popularEstoque(metaData[0].todos);
 const productsList = document.querySelector(".products-list");
 let view = "";
 const exibidos = []
+
+function abrirModal(){
+  let modal = document.querySelector('.cart-modal')
+  modal.classList.toggle("visible");
+}
 
 
 

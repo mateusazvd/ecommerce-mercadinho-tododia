@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,24 +8,44 @@
   <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <div class="header" onclick="">
-      <p>ai ai esse github</p>
 
-  <div class="header" onclick="">
-<<<<<<< HEAD
-      <h1>esse é meu valor</h1>
-=======>>>>>>> ef3bc96e36031832a677bec82a767769f7af1b29
+    <div>
+      <div class="header" onclick="">
         <div class="logo">
           <img src="https://logodownload.org/wp-content/uploads/2020/04/mercado-todo-dia-logo.png" width="200px" alt="">
         </div>
-        <div>
+        <div class="cart-area" onclick="abrirModal()">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="cart">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
           </svg>
           <span id="qtd-cart"></span>
         </div>
     </div>
-    
+    <div class="cart-modal-area">
+      <div class="cart-modal">
+        <p>Bem vindo(a), confira os produtos adicionados ao seu carrinho</p>
+        <div class="card-item-list-area">
+          <div class="cart-item">
+            <img src="https://imgs.extra.com.br/1546546418/1xg.jpg?imwidth=292" alt="">
+            <div>
+              <div class="cart-item-nome">Macarrão Parafuso  DONA BENTA 500g</div>
+              <div class="cart-item-preco">R$ 2.66</div>
+              <div class=cart-item-qtd-area>
+                <button onclick='adiciona(1)' class="aumentar">+</button>
+                <span>1</span>
+                <button onclick='diminuir(1)' class="aumentar">-</button>  
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="btn-finalizar-compra">
+          <button>Finalizar compra</button>
+        </div>
+      </div>
+     
+    </div>
+    </div>
     <div class="enunciado">
       <h2>Confira nossos produtos</h2>
       <div class="sub-menu">
@@ -37,16 +57,16 @@
       
     </div>
     <div class="products-list">
-      
+
     </div>
+
+
+
     <footer>
       <div class="contatos">
         
       </div>
       <div class="cartoes">
-
-      </div>
-      <div class="">
 
       </div>
     </footer>
