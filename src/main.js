@@ -1,10 +1,3 @@
-/**
- * Teste de merge!
- */
-
-
-
-
 class Produto
 {
     constructor(id, categoria, nome, preco, quantidade, url)
@@ -68,6 +61,63 @@ class Estoque
         
     }
 }
+
+class Venda
+{
+  constructor(id, items, endereco, formaDePagamento)
+  {
+    this.id = id;
+    this.items = items;
+    this.endereco = endereco;
+    this.formaDePagamento = formaDePagamento;
+  }
+    setRua(valor)
+    {
+      if(valor != null && valor != undefined && typeof valor === "string")
+      {
+        this.endereco.rua = valor;
+      }
+    }
+
+    setNumero(valor)
+    {
+      if(valor != null && valor != undefined && typeof valor === "string")
+      {
+        this.endereco.numero = valor;
+      }
+    }
+
+    setBairro(valor)
+    {
+      if(valor != null && valor != undefined && typeof valor === "string")
+      {
+        this.endereco.bairro = valor;
+      }
+    }
+
+    setFormaDePagamento(valor)
+    {
+      if(valor != null && valor != undefined && typeof valor === "string")
+      {
+        this.formaDePagamento = valor;
+      }
+    }
+
+    getFormaDePagamento(e)
+    {
+        if(e.target.checked)
+        {
+            this.formaDePagamento = e.target.value;
+        }
+    }
+
+    selfLog()
+    {
+        console.log(this);
+    }
+}
+
+
 let metaData = [
     {
         todos: [
@@ -302,7 +352,6 @@ class Carrinho
     checarCarrinho(arr)
     {
         let total = estoque
-        console.log("Aumento: ", this.produtos);
         for(let i = 0; i < arr.length; i++)
         {
           for(let j = 0; j < total.length; j++){
@@ -337,7 +386,6 @@ class Carrinho
                     }
                 }
         }
-        console.log("Diminuição: ", this.produtos);
     }
 
     calcularPrecoDaCompra()
@@ -421,7 +469,6 @@ function adiciona(id){
         document.querySelector(`#${state_filter}`).click()
       }
     }
-    console.log("aqui",carrinho.produtos);
     renderizarCarrinho(carrinho.produtos)
     carrinho.calcularPrecoDaCompra()
     carrinho.atualizarqtd()
@@ -520,5 +567,29 @@ function gerarLinkCompra(){
   // let btnFinalizar = document.querySelector('#btnFinaliza')
   // btnFinalizar.innerHTML `<a id="aqui" href="${link}">Finalizar compra</a>`
   console.log(`https://picpay.me/mikael.previtera/${carrinho.calcularPrecoDaCompra()}`);
-  
+  logFinal();
 }
+
+function logFinal()
+{
+  console.log("Estados importantes: ");
+  console.log("Estoque: ", estoque);
+  console.log("Itens a exibir: ", f.produtosAExibir);
+  console.log("Itens no carrinho:", carrinho.coisasCompradas);
+  console.log("Total da compra:", carrinho.calcularPrecoDaCompra());
+}
+
+/**
+ * Nome 
+ * Endereço rua casa bairro cidade
+ * Forma de Pagamento
+ */
+
+function formatarVenda(...args)
+{
+    let variaveis = args;
+    
+    vendas.push(new Venda(...variaveis));
+}
+
+let vendas = [];
