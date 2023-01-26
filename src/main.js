@@ -605,6 +605,8 @@ function abrirModalCompra(){
 }
 
 function chamaFuncoesCarrinho(){
-  gerarLinkCompra()
-  abrirModalCompra()
+  if(carrinho.coisasCompradas.length != 0){
+    gerarLinkCompra()
+    abrirModalCompra()
+  }
 }
