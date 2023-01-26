@@ -352,7 +352,7 @@ class Carrinho
     }
     atualizarqtd()
     {
-      let tamanho = carrinho.produtos.length
+      let tamanho = carrinho.coisasCompradas.length
       document.querySelector('#qtd-cart').innerHTML = tamanho
       document.querySelector('#qtd-cart').classList.add('qtd-cart')
     }
@@ -367,15 +367,20 @@ const exibidos = []
 function abrirModal(){
   let modal = document.querySelector('.cart-modal')
   modal.classList.toggle("visible");
+  renderizarCarrinho(carrinho.coisasCompradas)
+
 }
 
 let carrinho = new Carrinho(1)
 
 function renderizarCarrinho(arr){
-  let carrinhoView = ''
-  carrinho.coisasCompradas = []
-  arr.map(produto => {
 
+  let carrinhoView = '<p class = "titulo-vazio">Não há itens no seu carrinho</p>'
+  carrinho.coisasCompradas = []
+  if(arr.length != 0){
+    carrinhoView = ''
+  }
+  arr.map(produto => {    
       if(produto.quantidade != 0){
         carrinho.coisasCompradas.push(produto)
         carrinhoView = carrinhoView + `
@@ -393,7 +398,10 @@ function renderizarCarrinho(arr){
             </div>
     `
     }
-})
+    
+  }
+
+)
   document.querySelector('.card-item-list-area').innerHTML = carrinhoView
   // console.log(carrinho.produtos);
 }
@@ -406,14 +414,14 @@ function adiciona(id){
         // console.log(total[i]);
         carrinho.adicionarAoCarrinho(total[i])
         // console.log(carrinho.produtos);
-        carrinho.atualizarqtd()
         document.querySelector(`#${state_filter}`).click()
       }
     }
     console.log("aqui",carrinho.produtos);
     renderizarCarrinho(carrinho.produtos)
     carrinho.calcularPrecoDaCompra()
-     
+    carrinho.atualizarqtd()
+
     
 }
 function diminuir(id){
@@ -423,12 +431,13 @@ function diminuir(id){
       // total[i].quantidade--
       // console.log(total[i]);
       carrinho.removerDoCarrinho(total[i].id)
-      carrinho.atualizarqtd()
       document.querySelector(`#${state_filter}`).click()
     }
   }
   renderizarCarrinho(carrinho.produtos) 
   carrinho.calcularPrecoDaCompra()
+  carrinho.atualizarqtd()
+
 
 }
 

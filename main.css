@@ -200,3 +200,7 @@ footer{
 .visible{
   display: none;
 }
+.titulo-vazio{
+  color: rgb(170, 170, 170);
+  font-size: 14px;
+}
