@@ -328,3 +328,15 @@ footer{
 .btn-area-compra button:hover{
   background-color: #037e49;
 }
+
+.compra-finalizada{
+  position: fixed;
+  top: 120px;
+  left: 450px;
+  background-color: #037e49;
+  color: white;
+  width: 400px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 7px;
+}

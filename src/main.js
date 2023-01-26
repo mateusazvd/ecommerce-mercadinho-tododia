@@ -637,8 +637,26 @@ function resolverMudanca()
       <a onclick=${resolverVenda()} href="https://app.picpay.com/user/mikael.previtera/${carrinho.calcularPrecoDaCompra()}"> Finalizar Compra</a>
     `
   }else{
-    console.log("Morra, Abner");
+    document.querySelector(".btn-area-compra").innerHTML = `
+    <button onclick = "compraFinalizada()">Finalizar Compra</button>
+    `
   } 
 
   
+}
+
+
+function compraFinalizada(){
+  abrirModalCompra()
+  elemento = document.querySelector('.compra-finalizada')
+  elemento.classList.toggle("visible");
+  console.log('teste');
+  setTimeout(()=>{
+    elemento = document.querySelector('.compra-finalizada')
+    elemento.classList.toggle("visible");
+  },2000)
+  coisasCompradas = []
+  renderizarCarrinho(coisasCompradas)
+  carrinho.atualizarqtd()
+
 }
