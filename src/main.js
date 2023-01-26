@@ -593,3 +593,18 @@ function formatarVenda(...args)
 }
 
 let vendas = [];
+
+
+
+
+//abrir carrinho de compras
+function abrirModalCompra(){
+  elemento = document.querySelector('.modal-finalizar-compra')
+  elemento.classList.toggle("visible");
+  console.log('teste');
+}
+
+function chamaFuncoesCarrinho(){
+  gerarLinkCompra()
+  abrirModalCompra()
+}

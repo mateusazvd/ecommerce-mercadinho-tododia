@@ -9,6 +9,7 @@
 </head>
 <body>
 
+   <div class="app-area">
     <div>
       <div class="header" onclick="">
         <div class="logo">
@@ -28,10 +29,9 @@
         </div>
         <div class="btn-finalizar-compra">
           <div id="total_compra"></div>
-          <button id="btnFinaliza" onclick="gerarLinkCompra()">Finalizar compra</button>
+          <button id="btnFinaliza" onclick="chamaFuncoesCarrinho()">Finalizar compra</button>
         </div>
       </div>
-     
     </div>
     </div>
     <div class="enunciado">
@@ -42,14 +42,9 @@
         <div id="alimento" class="sub-menu-actions" >Alimentação</div>
         <div id="bebida" class="sub-menu-actions">Bebidas</div>
       </div>
-      
     </div>
     <div class="products-list">
-
     </div>
-
-
-
     <footer>
       <div class="contatos">
         
@@ -58,7 +53,48 @@
 
       </div>
     </footer>
-
+   </div>
+   <div class="modal-finalizar-compra visible">
+    <div class="modal-finalizar-compra-item">
+      <div class="titulo-modal-finalizar-compra">Quase lá</div>
+      <p>Digite as informações para a entrega dos produtos</p>
+      <div class="endereço-area">
+        <div>
+          <div class="form-title">nome (digite seu nome para receber os produtos)</div>
+          <div><input type="text"></div>
+        </div>
+        
+      </div>
+      <div class="endereço-area">
+        <div>
+          <div class="form-title">endereço</div>
+          <div><input type="text"></div>
+        </div>
+        <div>
+          <div class="form-title2">Número</div>
+          <div><input type="text" id="numero"></div>
+        </div>
+      </div>
+      <div class="forma-de-pagamento">
+          <div style="margin-left: 50px;">Forma de pagamento</div>
+          <form action="">
+            <div class="form-area">
+              <label for="1">PicPay 
+                <input type="radio" value="picpay" id="1-form" name="teste" ></label>
+            </div>
+            <div class="form-area">
+              <label for="2">Pagar na hora da entrega
+                <input type="radio" value="pagarnahora" id="2-form" name="teste">
+              </label>
+            </div>
+          </form>
+          <div class="btn-area-compra">
+            <button>Finalizar Compra</button>
+          </div>
+          <div class="sair-form" onclick="abrirModalCompra()">X</div>
+      </div>
+    </div>
+   </div>
 </body>
 <script src="./src/main.js"></script>
 </html>
