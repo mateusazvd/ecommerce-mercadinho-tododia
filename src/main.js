@@ -348,7 +348,7 @@ class Carrinho
             total += this.coisasCompradas[k].preco * this.coisasCompradas[k].quantidade;
         }
 
-        console.log(`O total da compra é de R$ ${total.toFixed(2)}`)
+       return total.toFixed(2)
     }
     atualizarqtd()
     {
@@ -368,6 +368,7 @@ function abrirModal(){
   let modal = document.querySelector('.cart-modal')
   modal.classList.toggle("visible");
   renderizarCarrinho(carrinho.coisasCompradas)
+
 
 }
 
@@ -405,7 +406,10 @@ function renderizarCarrinho(arr){
   document.querySelector('.card-item-list-area').innerHTML = carrinhoView
   // console.log(carrinho.produtos);
 }
+function exibirTotal(){
 
+  document.querySelector('#total_compra').innerHTML = `<div class = 'display-total'> Total: R$ ${carrinho.calcularPrecoDaCompra()}</div>`
+}
 function adiciona(id){
     let total = estoque
     for(let i = 0; i < total.length;i++){
@@ -421,6 +425,7 @@ function adiciona(id){
     renderizarCarrinho(carrinho.produtos)
     carrinho.calcularPrecoDaCompra()
     carrinho.atualizarqtd()
+    exibirTotal()
 
     
 }
@@ -437,6 +442,7 @@ function diminuir(id){
   renderizarCarrinho(carrinho.produtos) 
   carrinho.calcularPrecoDaCompra()
   carrinho.atualizarqtd()
+  exibirTotal()
 
 
 }
@@ -507,3 +513,12 @@ function renderizar(arr){
 
 
 
+function gerarLinkCompra(){
+  
+  // document.querySelector('#aqui').setAttribute('href',`https://picpay.me/mikael.previtera/${carrinho.calcularPrecoDaCompra()}`) 
+  // let link = `https://picpay.me/mikael.previtera/${carrinho.calcularPrecoDaCompra()}`
+  // let btnFinalizar = document.querySelector('#btnFinaliza')
+  // btnFinalizar.innerHTML `<a id="aqui" href="${link}">Finalizar compra</a>`
+  console.log(`https://picpay.me/mikael.previtera/${carrinho.calcularPrecoDaCompra()}`);
+  
+}

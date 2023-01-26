@@ -142,12 +142,19 @@ footer{
   border: none;
   border-radius: 5px;
   color: white;
-  position: absolute;
   bottom: 15px;
-  left: 90px;
   cursor: pointer;
+}
 
-  
+.btn-finalizar-compra{
+  display: flex;
+  justify-content: center;
+}
+.btn-finalizar-compra div{
+  margin-top: 5px;
+  padding-right: 10px;
+  color: rgb(83, 83, 83);
+  font-weight: 700;
 }
 .cart-modal p{
   text-align: center;
@@ -204,3 +211,4 @@ footer{
   color: rgb(170, 170, 170);
   font-size: 14px;
 }
+
