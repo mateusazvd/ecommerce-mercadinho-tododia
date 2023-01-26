@@ -64,9 +64,10 @@ class Estoque
 
 class Venda
 {
-  constructor(id, items, endereco, formaDePagamento)
+  constructor(id, nome, items, endereco, formaDePagamento)
   {
     this.id = id;
+    this.nome = nome;
     this.items = items;
     this.endereco = endereco;
     this.formaDePagamento = formaDePagamento;
@@ -566,8 +567,9 @@ function gerarLinkCompra(){
   // let link = `https://picpay.me/mikael.previtera/${carrinho.calcularPrecoDaCompra()}`
   // let btnFinalizar = document.querySelector('#btnFinaliza')
   // btnFinalizar.innerHTML `<a id="aqui" href="${link}">Finalizar compra</a>`
-  console.log(`https://picpay.me/mikael.previtera/${carrinho.calcularPrecoDaCompra()}`);
   logFinal();
+  return `https://app.picpay.com/user/mikael.previtera/`
+  
 }
 
 function logFinal()
@@ -595,7 +597,23 @@ function formatarVenda(...args)
 let vendas = [];
 
 
+/**
+ * formatarVenda(1, 
+ *               document.querySelector("#nome").value
+ *               carrinho.coisasCompradas, 
+ *               {rua: document.querySelector("#endereco").value, 
+ *               numero: document.querySelector("#numero").value}, 
+ *               document.getElementById(""))
+ */
 
+function resolverVenda()
+{
+  return formatarVenda(1,document.querySelector("#nome").value,
+                  carrinho.coisasCompradas, 
+                  {rua: document.querySelector("#endereco").value, 
+                  numero: document.querySelector("#numero").value}, 
+                  document.getElementById(""))
+}
 
 //abrir carrinho de compras
 function abrirModalCompra(){
@@ -609,4 +627,18 @@ function chamaFuncoesCarrinho(){
     gerarLinkCompra()
     abrirModalCompra()
   }
+}
+
+function resolverMudanca()
+{
+  if(document.getElementById("1-form").checked)
+  {
+    document.querySelector(".btn-area-compra").innerHTML = `
+      <a onclick=${resolverVenda()} href="https://app.picpay.com/user/mikael.previtera/${carrinho.calcularPrecoDaCompra()}"> Finalizar Compra</a>
+    `
+  }else{
+    console.log("Morra, Abner");
+  } 
+
+  
 }

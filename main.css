@@ -313,6 +313,18 @@ footer{
   cursor: pointer;
   color: white;
 }
+.btn-area-compra a{
+  padding: 10px 15px;
+  border: none;
+  border-radius: 7px;
+  background-color: #07bb6d;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+.btn-area-compra a:hover{
+  background-color: #037e49;
+}
 .btn-area-compra button:hover{
   background-color: #037e49;
 }

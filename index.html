@@ -61,14 +61,14 @@
       <div class="endereço-area">
         <div>
           <div class="form-title">nome (digite seu nome para receber os produtos)</div>
-          <div><input type="text"></div>
+          <div><input id="nome" type="text"></div>
         </div>
         
       </div>
       <div class="endereço-area">
         <div>
           <div class="form-title">endereço</div>
-          <div><input type="text"></div>
+          <div><input id="endereco" type="text"></div>
         </div>
         <div>
           <div class="form-title2">Número</div>
@@ -80,11 +80,11 @@
           <form action="">
             <div class="form-area">
               <label for="1">PicPay 
-                <input type="radio" value="picpay" id="1-form" name="teste" ></label>
+                <input onchange="resolverMudanca()" type="radio" value="picpay" id="1-form" name="teste" ></label>
             </div>
             <div class="form-area">
               <label for="2">Pagar na hora da entrega
-                <input type="radio" value="pagarnahora" id="2-form" name="teste">
+                <input onchange="resolverMudanca()" type="radio" value="pagarnahora" id="2-form" name="teste">
               </label>
             </div>
           </form>
